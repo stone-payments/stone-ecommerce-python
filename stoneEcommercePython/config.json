@@ -1,0 +1,7 @@
+[
+  {
+    "merchant_key": "00000000-0000-0000-0000-000000000000",
+    "production_host_uri": "https://transaction.stone.com.br",
+    "sandbox_host_uri": ""
+  }
+]
