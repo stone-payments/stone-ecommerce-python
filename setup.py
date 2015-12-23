@@ -17,10 +17,7 @@ setup(
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
-        'Topic :: Gateway Integration :: SDK',
-
-        'License ::  Apache 2 License',
-
+        'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 2.7'
     ],
     install_requires=['requests>=2.0.0', 'enum34>=1.0.0', 'xmltodict>=0.9.2'],
