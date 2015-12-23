@@ -1,6 +1,6 @@
 # stone-ecommerce-python
 
-### Instaling with pip
+### Installing with pip
 `pip install stone_ecommerce_python`
 
 ### Required Packages
