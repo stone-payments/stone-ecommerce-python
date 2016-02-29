@@ -8,3 +8,4 @@ from AntiFraudAnalysisStatusEnum import AntiFraudAnalysisStatusEnum
 from AntiFraudAnalysisStatusEnum import AntiFraudAnalysisStatusEnum
 from CreditCardOperationEnum import CreditCardOperationEnum
 from FrequencyEnum import FrequencyEnum
+from CreateCreditCardRequest import create_creditcard_request
