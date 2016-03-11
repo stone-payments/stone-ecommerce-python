@@ -11,6 +11,7 @@ class GatewayServiceClient(object):
         else:
             self.sale = SaleResource(merchant_key, environment, http_content_type, host_uri)
         self.credit_card = CreditCardResource(merchant_key, environment, http_content_type, host_uri)
+        self.buyer = BuyerResource(merchant_key, environment, http_content_type, host_uri)
 
     @property
     def sale(self):
@@ -33,3 +34,15 @@ class GatewayServiceClient(object):
             self.__credit_card = credit_card_resource
         else:
             self.__credit_card = None
+			
+	@property
+	def buyer(self):
+		return self.__buyer
+		
+	@buyer.setter
+	def buyer(self,buyer_resource):
+		if type(buyer_resource) is BuyerResource:
+			self.__buyer = buyer_resource
+		else:
+			self.__buyer = None
+
