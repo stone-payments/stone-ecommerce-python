@@ -1,25 +1,42 @@
-from distutils.core import setup
-import os
-import sys
+# -*- coding: utf-8 -*-
+from setuptools import setup, find_packages
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'stoneEcommercePython'))
+__version__ = '1.0.1'
+__description__ = 'Python stone payment api'
+__long_description__ = 'Sdk for integration with stone payment api'
+
+__author__ = 'Stone Pagamentos'
+__author_email__ = 'devcenter@stone.com.br'
+
+requires = [i.strip() for i in open("requirements.txt").readlines()]
+
+testing_extras = [
+    'pytest',
+    'pytest-cov',
+]
 
 setup(
     name='stone_ecommerce_python',
-    version='1.0.1',
-    package_dir={'stoneEcommercePython': 'stoneEcommercePython', 'data_contracts': 'stoneEcommercePython/data_contracts', 'enum_types': 'stoneEcommercePython/enum_types', 'resource_clients': 'stoneEcommercePython/resource_clients', 'transaction_report_file': 'stoneEcommercePython/transaction_report_file'},
-    packages=['stoneEcommercePython', 'data_contracts', 'enum_types', 'resource_clients', 'transaction_report_file'],
-    url='https://github.com/stone-pagamentos/stone-ecommerce-python',
+    version=__version__,
+    author=__author__,
+    author_email=__author_email__,
+    packages=find_packages(),
     license='Apache',
-    author='Stone Pagamentos',
-    author_email='devcenter@stone.com.br',
-    description='Sdk for integration with stone payment api',
+    description=__description__,
+    long_description=__long_description__,
+    url='https://github.com/stone-pagamentos/stone-ecommerce-python',
+    keywords=['stone', 'rest', 'sdk', 'payments'],
+    include_package_data=True,
+    zip_safe=False,
+    install_requires=requires,
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 2.7'
     ],
-    install_requires=['requests>=2.0.0', 'enum34>=1.0.0', 'xmltodict>=0.9.2'],
-    keywords=['stone', 'rest', 'sdk', 'payments']
+    tests_require=['pytest'],
+    extras_require={
+        'testing': testing_extras,
+    },
 )

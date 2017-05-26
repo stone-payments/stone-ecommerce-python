@@ -1,5 +1,5 @@
 from stoneEcommercePython.ConfigurationUtility import ConfigurationUtility
-from resource_clients import SaleResource, CreditCardResource
+from resource_clients import SaleResource, CreditCardResource, BuyerResource
 
 
 class GatewayServiceClient(object):
@@ -34,15 +34,14 @@ class GatewayServiceClient(object):
             self.__credit_card = credit_card_resource
         else:
             self.__credit_card = None
-			
+
 	@property
 	def buyer(self):
 		return self.__buyer
-		
+
 	@buyer.setter
 	def buyer(self,buyer_resource):
 		if type(buyer_resource) is BuyerResource:
 			self.__buyer = buyer_resource
 		else:
 			self.__buyer = None
-
